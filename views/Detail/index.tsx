@@ -14,6 +14,10 @@ import { handleColorBackground, handleColorTag } from "utils/backgroundChanger";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonDetail } from "redux/actions";
 import { RootState } from "redux/store";
+import About from "./partials/About";
+import BaseStats from "./partials/BaseStats";
+import Evolution from "./partials/Evolution";
+import Moves from "./partials/Moves";
 const { TabPane } = Tabs;
 
 function Detail(props) {
@@ -28,11 +32,11 @@ function Detail(props) {
     dispatch(getPokemonDetail(router?.query?.name));
   }, [router?.query?.name]);
 
-  useEffect(()=>{
-    setTypePokemon(pokemon?.types.map((item) => item.type.name))
-  },[pokemon?.id])
+  useEffect(() => {
+    setTypePokemon(pokemon?.types.map((item) => item.type.name));
+  }, [pokemon?.id]);
 
-  console.log(pokemon,typePokemon)
+  console.log(pokemon, typePokemon);
 
   return (
     <div>
@@ -71,7 +75,9 @@ function Detail(props) {
                     {pokemon?.types?.map((type, id) => (
                       <Col
                         className="pokemon-tag"
-                        style={{ backgroundColor: handleColorTag(typePokemon||[]) }}
+                        style={{
+                          backgroundColor: handleColorTag(typePokemon || []),
+                        }}
                         key={id}
                       >
                         {type.type.name}
@@ -95,16 +101,16 @@ function Detail(props) {
               <Row className="layout-content-wrapper">
                 <Tabs centered style={{ marginTop: "50px" }}>
                   <TabPane tab="About" key="1">
-                    Content of Tab Pane 1
+                    <About />
                   </TabPane>
                   <TabPane tab="Base Stats" key="2">
-                    Content of Tab Pane 2
+                    <BaseStats />
                   </TabPane>
                   <TabPane tab="Evolution" key="3">
-                    Content of Tab Pane 3
+                    <Evolution />
                   </TabPane>
                   <TabPane tab="Moves" key="4">
-                    Content of Tab Pane 3
+                    <Moves />
                   </TabPane>
                 </Tabs>
                 {/* <motion.div variants={stagger(0.08)}>
