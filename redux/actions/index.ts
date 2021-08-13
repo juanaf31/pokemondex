@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_POKEMON } from "constants/initType";
+import { GET_POKEMON, GET_POKEMON_DETAIL } from "constants/initType";
 
 export const getPokemonList = (limit, offset) => async (dispatch) => {
   const api = await axios
@@ -12,12 +12,11 @@ export const getPokemonList = (limit, offset) => async (dispatch) => {
     });
 };
 
-export const getPokemonDetail = (name) => async (dispatch:any) => {
+export const getPokemonDetail = (name) => async (dispatch: any) => {
   const api = await axios
     .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((res) => {
-        console.log(res.data)
-      return res.data;
+      dispatch({ type: GET_POKEMON_DETAIL, payload: res.data });
     })
     .catch((err) => {
       console.log(err);

@@ -1,10 +1,32 @@
+@mobile:   ~"only screen and (min-width: 320px) and (max-width: 500px)";
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet:    ~"only screen and (min-width: 501px) and (max-width: 959px)";
+
 .pokemon-details-header.ant-layout-header {
   padding: 11px !important;
-
+  height: 40vh;
   svg {
     fill: @white-color;
     width: 32px;
     cursor: pointer;
+  }
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 13px;
+    // box-shadow: 0px 7px 55px -26px rgba(0, 0,  0,0.75);
+    z-index: 100;
+
+    @media @mobile {
+      width: 200px;
+      height: 200px;
+      margin: 70px auto 0;
+    }
+    @media @tablet {
+      width: 200px;
+      height: 200px;
+      margin: 70px auto 0;
+    }
   }
 }
 
@@ -12,7 +34,7 @@
   background-color: @primary-color !important;
   height: 100vh;
   width: 100vw;
-  max-width: unset;
+  max-width: 100%;
   padding: 0;
   position: relative;
 
@@ -22,31 +44,19 @@
   }
 
   .ant-layout-content {
-    // background-color: @white-color;
-    // border-radius: 30px 30px 0 0;
+    background-color: @white-color;
+    border-radius: 30px 30px 0 0;
 
-    // .layout-content-wrapper {
-    //   display: flex;
-    //   flex-direction: column;
-    //   position: absolute;
-    //   margin: auto;
-    //   left: 0;
-    //   right: 0;
-    // }
-
-    img {
-      width: 85%;
-      height: 85%;
-      margin: -100px auto 0;
-      border-radius: 13px;
-      box-shadow: 0px 7px 55px -26px rgba(0, 0,  0,0.75);
-
-
-      @media screen and (min-width: 1000px) {
-        width: 300px;
-        height: 300px;
-      }
+    .layout-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
     }
+
+    
 
     .pokemon-name {
       margin: 11px auto 0;
@@ -83,4 +93,17 @@
       }
     }
   }
+}
+  .pokemon-tag {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50px;
+    margin-left: 10px;
+  }
+.pokemon-types {
+  width: 100vw;
 }
