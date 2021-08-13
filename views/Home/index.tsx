@@ -73,10 +73,10 @@ const Home: NextPage = () => {
                     onClick={() => setLimit((prev) => prev + 10)}
                   >
                     <Row justify="center">
+                      <Col>Load More</Col>
                       <Col span={24}>
                         <DownOutlined />
                       </Col>
-                      <Col>Load More</Col>
                     </Row>
                   </Button>
                 </motion.div>
