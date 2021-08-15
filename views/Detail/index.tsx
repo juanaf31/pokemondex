@@ -18,12 +18,13 @@ import About from "./partials/About";
 import BaseStats from "./partials/BaseStats";
 import Evolution from "./partials/Evolution";
 import Moves from "./partials/Moves";
+import { PokemonDetailAttributes } from "models/pokemonDetail";
 const { TabPane } = Tabs;
 
 function Detail(props) {
   const dispatch = useDispatch();
   const router = useRouter();
-  const pokemon = useSelector(
+  const pokemon: PokemonDetailAttributes = useSelector(
     (state: RootState) => state.pokemonReducer.pokemonDetail
   );
   const [typePokemon, setTypePokemon] = useState([]);
@@ -113,18 +114,6 @@ function Detail(props) {
                     <Moves />
                   </TabPane>
                 </Tabs>
-                {/* <motion.div variants={stagger(0.08)}>
-                  <Col>
-                    <ul>
-                      {pokemon?.stats.map((item, id) => (
-                        <motion.li key={id} variants={fadeInUp}>
-                          <strong>{item.stat.name}</strong>
-                          <Tag color="magenta">{item.base_stat}</Tag>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </Col>
-                </motion.div> */}
               </Row>
             </Layout.Content>
           ) : (

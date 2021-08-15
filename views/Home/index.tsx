@@ -14,10 +14,11 @@ import menu from "public/images/menu.png";
 import fadeInUp from "animations/fadeInUp";
 import "styles/pages/search.less";
 import { useState } from "react";
+import { PokemonListAttributes } from "models/pokemonList";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
-  const listPokemon = useSelector(
+  const listPokemon: PokemonListAttributes = useSelector(
     (state: RootState) => state.pokemonReducer.pokemonList
   );
   const [limit, setLimit] = useState(10);

@@ -1,6 +1,6 @@
-@mobile:   ~"only screen and (min-width: 320px) and (max-width: 500px)";
-@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
-@tablet:    ~"only screen and (min-width: 501px) and (max-width: 959px)";
+@mobile: ~"only screen and (min-width: 320px) and (max-width: 500px)";
+@desktop: ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet: ~"only screen and (min-width: 501px) and (max-width: 959px)";
 
 .pokemon-details-header.ant-layout-header {
   padding: 11px !important;
@@ -56,8 +56,6 @@
       right: 0;
     }
 
-    
-
     .pokemon-name {
       margin: 11px auto 0;
     }
@@ -94,16 +92,22 @@
     }
   }
 }
-  .pokemon-tag {
-    width: 150px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border-radius: 50px;
-    margin-left: 10px;
-  }
+.pokemon-tag {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50px;
+  margin-left: 10px;
+}
 .pokemon-types {
   width: 100vw;
+}
+
+.card-shadow {
+  height: 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
