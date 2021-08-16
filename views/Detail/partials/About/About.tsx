@@ -29,7 +29,7 @@ function About() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 20,
+        padding: 30,
       }}
     >
       <motion.div variants={fadeInUp}>
@@ -67,13 +67,29 @@ function About() {
                         </Col>
                       </Row>
                     </Col>
+                    <Col>
+                      <Row justify="center">
+                        <Col>Abilities</Col>
+                      </Row>
+                      <Row justify="center" gutter={[8, 8]}>
+                        {pokemon?.abilities.map((item) => (
+                          <Col span={24}>
+                            <Row justify="center">
+                              <Text bold>{item.ability.name}</Text>
+                            </Row>
+                          </Col>
+                        ))}
+                      </Row>
+                    </Col>
                   </Row>
                 </div>
               </Col>
             </Row>
           </Col>
           <Col span={24}>
-            <Breeding />
+            <Row justify="center">
+              <Breeding />
+            </Row>
           </Col>
         </Row>
       </motion.div>

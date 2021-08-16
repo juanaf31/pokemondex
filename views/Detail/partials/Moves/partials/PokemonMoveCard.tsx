@@ -26,7 +26,7 @@ function PokemonMoveCard({ name, url }: MoveAttributes) {
     };
     getPokemonMove();
   }, []);
-  console.log(move);
+
   return (
     <Col span={24} style={{ padding: "0 10%" }}>
       <motion.div

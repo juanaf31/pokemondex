@@ -18,18 +18,12 @@ const mapBgColor = {
   gray: "#F4F4F4",
 };
 
-const mapFontFamily = {
-  bold: "SFProText-Bold",
-  regular: "SFProText-Regular",
-};
-
 export interface IText extends TextProps {
   className?: string;
   size?: number;
   color?: "primary" | "white" | "black" | "gray" | "red" | "green" | any;
   bold?: boolean;
   style?: CSSProperties;
-  fontFamily?: "bold" | "regular";
   block?: boolean;
   bgColor?: "transparent" | "gray" | any;
   padding?: number;
@@ -44,7 +38,6 @@ function Text(props: IText) {
     bgColor,
     style,
     padding,
-    fontFamily = "regular",
     ...cProps
   } = props;
 
@@ -53,7 +46,6 @@ function Text(props: IText) {
   return (
     <CurText
       style={{
-        fontFamily: mapFontFamily[fontFamily],
         color: mapColor[color] || color,
         backgroundColor: mapBgColor[bgColor] || bgColor,
         fontSize: size,

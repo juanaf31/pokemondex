@@ -37,8 +37,6 @@ function Detail(props) {
     setTypePokemon(pokemon?.types.map((item) => item.type.name));
   }, [pokemon?.id]);
 
-  console.log(pokemon, typePokemon);
-
   return (
     <div
       style={{
