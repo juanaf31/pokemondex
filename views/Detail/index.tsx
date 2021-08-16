@@ -14,10 +14,10 @@ import { handleColorBackground, handleColorTag } from "utils/backgroundChanger";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonDetail } from "redux/actions";
 import { RootState } from "redux/store";
-import About from "./partials/About";
+import About from "./partials/About/About";
 import BaseStats from "./partials/BaseStats";
 import Evolution from "./partials/Evolution";
-import Moves from "./partials/Moves";
+import Moves from "./partials/Moves/Moves";
 import { PokemonDetailAttributes } from "models/pokemonDetail";
 const { TabPane } = Tabs;
 
@@ -40,7 +40,12 @@ function Detail(props) {
   console.log(pokemon, typePokemon);
 
   return (
-    <div>
+    <div
+      style={{
+        overflowX: "hidden",
+        backgroundColor: handleColorBackground(typePokemon || []),
+      }}
+    >
       <Head>
         <title>
           Pokemon |{pokemon?.name ? pokemon.name : "Pokemon Details"}

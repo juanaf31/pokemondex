@@ -1,11 +1,10 @@
-import { Col, Row, Tag, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getPokemonDetail } from "redux/actions";
 import { motion } from "framer-motion";
+import Text from "components/Typography/Text";
 
 import fadeInUp from "animations/fadeInUp";
 import { handleColorBackground, handleColorTag } from "utils/backgroundChanger";

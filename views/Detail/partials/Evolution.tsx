@@ -16,7 +16,6 @@ function Evolution() {
     dispatch(getPokemonEvolution(pokemon?.id));
   }, [pokemon?.id]);
 
-  console.log(pokemonEvolution);
   return <div>Evolution</div>;
 }
 

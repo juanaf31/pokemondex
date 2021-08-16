@@ -1,6 +1,7 @@
 import fadeInUp from "animations/fadeInUp";
 import stagger from "animations/stagger";
-import { Col, Progress, Row, Tag, Typography } from "antd";
+import { Col, Progress, Row } from "antd";
+import Text from "components/Typography/Text";
 import { motion } from "framer-motion";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -19,9 +20,11 @@ function BaseStats() {
             {pokemon?.stats.map((item, id) => (
               <motion.div key={id} variants={fadeInUp}>
                 <Row gutter={[12, 0]} justify="center">
-                  <Col span={10}>{item.stat.name}</Col>
+                  <Col span={10}>
+                    <Text bold>{item.stat.name}</Text>
+                  </Col>
                   <Col span={3}>
-                    <Typography.Text>{item.base_stat}</Typography.Text>
+                    <Text>{item.base_stat}</Text>
                   </Col>
                   <Col span={7}>
                     <div style={{ width: "100%" }}>
