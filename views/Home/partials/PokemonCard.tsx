@@ -1,4 +1,4 @@
-import { Col, Row, Typography } from "antd";
+import { Col, notification, Row, Typography } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -27,7 +27,10 @@ function PokemonCard({ name, ...props }: IProps) {
           setTypePokemon(res.data.types.map((item) => item.type.name));
         })
         .catch((err) => {
-          console.log(err);
+          notification.error({
+            message: "Oops!",
+            description: `Error ${err}`,
+          });
         });
     };
     getPokemonDetail();

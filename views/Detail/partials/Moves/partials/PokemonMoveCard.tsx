@@ -1,5 +1,5 @@
 import fadeInUp from "animations/fadeInUp";
-import { Col, Row, Tag, Typography } from "antd";
+import { Col, notification, Row, Tag, Typography } from "antd";
 import axios from "axios";
 import Text from "components/Typography/Text";
 import { motion } from "framer-motion";
@@ -21,7 +21,10 @@ function PokemonMoveCard({ name, url }: MoveAttributes) {
           setMove(res.data);
         })
         .catch((err) => {
-          console.log(err);
+          notification.error({
+            message: "Oops!",
+            description: `Error ${err}`,
+          });
         });
     };
     getPokemonMove();

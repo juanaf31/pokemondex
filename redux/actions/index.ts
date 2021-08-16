@@ -1,3 +1,4 @@
+import { notification } from "antd";
 import axios from "axios";
 import {
   GET_POKEMON,
@@ -13,7 +14,10 @@ export const getPokemonList = (limit, offset) => async (dispatch) => {
       dispatch({ type: GET_POKEMON, payload: res.data });
     })
     .catch((err) => {
-      console.log(err);
+      notification.error({
+        message: "Oops!",
+        description: `Error ${err}`,
+      });
     });
 };
 
@@ -24,19 +28,23 @@ export const getPokemonDetail = (name) => async (dispatch: any) => {
       dispatch({ type: GET_POKEMON_DETAIL, payload: res.data });
     })
     .catch((err) => {
-      console.log(err);
+      notification.error({
+        message: "Oops!",
+        description: `Error ${err}`,
+      });
     });
 };
-export const getPokemonEvolution = (id) => async (dispatch: any) => {
-  const api = await axios
-    .get(`https://pokeapi.co/api/v2/evolution-chain/${id}`)
-    .then((res) => {
-      dispatch({ type: GET_POKEMON_EVOLUTION, payload: res.data.chain });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+// export const getPokemonEvolution = (id) => async (dispatch: any) => {
+//   const api = await axios
+//     .get(`https://pokeapi.co/api/v2/evolution-chain/${id}`)
+//     .then((res) => {
+//       dispatch({ type: GET_POKEMON_EVOLUTION, payload: res.data.chain });
+//       return res.data.chain;
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 export const getPokemonSpecies = (id) => async (dispatch: any) => {
   const api = await axios
     .get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
@@ -44,6 +52,9 @@ export const getPokemonSpecies = (id) => async (dispatch: any) => {
       dispatch({ type: GET_POKEMON_SPECIES, payload: res.data });
     })
     .catch((err) => {
-      console.log(err);
+      notification.error({
+        message: "Oops!",
+        description: `Error ${err}`,
+      });
     });
 };

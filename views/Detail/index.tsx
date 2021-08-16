@@ -16,7 +16,7 @@ import { getPokemonDetail } from "redux/actions";
 import { RootState } from "redux/store";
 import About from "./partials/About/About";
 import BaseStats from "./partials/BaseStats";
-import Evolution from "./partials/Evolution";
+import Evolution from "./partials/Evolution/Evolution";
 import Moves from "./partials/Moves/Moves";
 import { PokemonDetailAttributes } from "models/pokemonDetail";
 const { TabPane } = Tabs;

@@ -40,13 +40,13 @@ function BaseStats() {
           ))}
           <motion.div variants={fadeInUp}>
             <Row justify="center" style={{ marginTop: 30 }}>
-              <Col span={10}>
+              <Col xs={24} md={10}>
                 <Row>
                   <Typography.Title level={5}>Types defences</Typography.Title>
                 </Row>
                 The effectiveness of each type of {pokemon?.name}
               </Col>
-              <Col span={10}></Col>
+              <Col md={10}></Col>
             </Row>
           </motion.div>
         </Col>
