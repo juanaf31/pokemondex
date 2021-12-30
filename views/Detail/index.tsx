@@ -30,7 +30,9 @@ function Detail(props) {
   const [typePokemon, setTypePokemon] = useState([]);
 
   useEffect(() => {
-    dispatch(getPokemonDetail(router?.query?.name));
+    if (router?.query?.name) {
+      dispatch(getPokemonDetail(router?.query?.name));
+    }
   }, [router?.query?.name]);
 
   useEffect(() => {
